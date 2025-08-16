@@ -34,13 +34,20 @@ jobs:
       - name: Build
         run: npm run build
         
+      - name: Prepare GitHub Pages version
+        run: |
+          mkdir -p dist/github-pages
+          cp -r dist/public/* dist/github-pages/
+          sed -i 's|"/assets/|"./assets/|g' dist/github-pages/index.html
+          grep -v "replit-dev-banner" dist/github-pages/index.html > temp.html && mv temp.html dist/github-pages/index.html
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/public'
+          path: './dist/github-pages'
 
   deploy:
     environment:
