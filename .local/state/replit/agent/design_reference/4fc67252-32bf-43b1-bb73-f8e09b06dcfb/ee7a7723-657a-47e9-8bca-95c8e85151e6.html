@@ -1,0 +1,958 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshitij Tiwari - Mobile & Web Developer</title>
+    <meta name="description" content="Senior Mobile & Web Developer with 10 years experience in JavaScript, Ionic, React Native. Expert in mobile-first development.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'Consolas', 'monospace']
+                    },
+                    colors: {
+                        'tech-blue': '#3B82F6',
+                        'tech-green': '#10B981',
+                        'dark-navy': '#0F172A',
+                        'light-navy': '#1E293B'
+                    },
+                    animation: {
+                        'typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite'
+                    }
+                }
+            }
+        };
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3B82F6; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .typing-demo {
+            overflow: hidden;
+            border-right: .15em solid #3B82F6;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tech-card {
+            transition: all 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-navy text-slate-50 font-sans">
+    
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark-navy/80 backdrop-blur-md border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-tech-blue to-tech-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">KT</span>
+                    </div>
+                    <span class="font-semibold text-lg" data-bind="developer.name">Kshitij Tiwari</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="hover:text-tech-blue transition-colors">About</a>
+                    <a href="#skills" class="hover:text-tech-blue transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-tech-blue transition-colors">Projects</a>
+                    <a href="#experience" class="hover:text-tech-blue transition-colors">Experience</a>
+                    <a href="#contact" class="hover:text-tech-blue transition-colors">Contact</a>
+                </div>
+                
+                <button class="md:hidden text-slate-400 hover:text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Animated background particles -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-tech-blue/5 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tech-green/5 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold">
+                        <span class="block text-slate-300">Hi, I'm</span>
+                        <span class="block gradient-text" data-bind="developer.name">Kshitij Tiwari</span>
+                    </h1>
+                    
+                    <div class="text-xl md:text-2xl lg:text-3xl text-slate-400 h-16 flex items-center justify-center">
+                        <span class="typing-demo">Mobile & Web Developer</span>
+                    </div>
+                </div>
+                
+                <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed" data-mock="true">
+                    Crafting exceptional mobile and web experiences with <span class="text-tech-blue font-semibold">10 years</span> 
+                    of expertise in JavaScript, React Native, and Ionic. Passionate about mobile-first development and innovative solutions.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="bg-tech-blue hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2 hover:scale-105" data-event="click:viewProjects">
+                        <span>View Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <button class="border border-slate-600 hover:border-tech-green text-slate-300 hover:text-tech-green px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-2" data-event="click:downloadResume">
+                        <i class="fas fa-download"></i>
+                        <span>Download Resume</span>
+                    </button>
+                </div>
+                
+                <div class="flex justify-center space-x-6 pt-8">
+                    <a href="#" class="text-slate-400 hover:text-tech-blue text-2xl transition-colors" data-implementation="Link to GitHub profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-tech-blue text-2xl transition-colors" data-implementation="Link to LinkedIn profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-tech-blue text-2xl transition-colors" data-implementation="Link to Twitter profile">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-tech-blue text-2xl transition-colors" data-implementation="Link to email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-slate-400 text-xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20 bg-gradient-to-b from-dark-navy to-light-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    About <span class="gradient-text">Me</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Passionate developer with a decade of experience building cutting-edge mobile and web applications
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <!-- Professional coding setup with multiple monitors showing mobile development -->
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="JavaScript code on computer screen" 
+                         class="rounded-xl shadow-2xl w-full h-auto" 
+                         data-mock-image="true" />
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-semibold text-tech-blue">10 Years of Innovation</h3>
+                        <p class="text-slate-300 leading-relaxed" data-mock="true">
+                            I'm a passionate mobile and web developer with over a decade of experience creating 
+                            exceptional digital experiences. My journey began with web development, but I quickly 
+                            found my calling in mobile-first development, specializing in cross-platform solutions 
+                            that deliver native performance.
+                        </p>
+                        
+                        <p class="text-slate-300 leading-relaxed" data-mock="true">
+                            Throughout my career, I've had the privilege of working with startups and enterprise 
+                            clients, transforming ideas into robust, scalable applications. My expertise spans 
+                            the entire development lifecycle, from concept and design to deployment and maintenance.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-slate-800/50 rounded-lg">
+                            <div class="text-3xl font-bold text-tech-blue" data-bind="stats.projectsCompleted">50+</div>
+                            <div class="text-sm text-slate-400">Projects Completed</div>
+                        </div>
+                        
+                        <div class="text-center p-4 bg-slate-800/50 rounded-lg">
+                            <div class="text-3xl font-bold text-tech-green" data-bind="stats.yearsExperience">10</div>
+                            <div class="text-sm text-slate-400">Years Experience</div>
+                        </div>
+                        
+                        <div class="text-center p-4 bg-slate-800/50 rounded-lg">
+                            <div class="text-3xl font-bold text-tech-blue" data-bind="stats.happyClients">25+</div>
+                            <div class="text-sm text-slate-400">Happy Clients</div>
+                        </div>
+                        
+                        <div class="text-center p-4 bg-slate-800/50 rounded-lg">
+                            <div class="text-3xl font-bold text-tech-green" data-bind="stats.technologies">15+</div>
+                            <div class="text-sm text-slate-400">Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Skills Section -->
+    <section id="skills" class="py-20 bg-light-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    My <span class="gradient-text">Skills</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Proficient in modern technologies and frameworks for mobile and web development
+                </p>
+            </div>
+            
+            <!-- Core Technologies -->
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold text-center mb-8 text-tech-blue">Core Technologies</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- @MAP: coreSkills.map(skill => ( -->
+                    <div class="tech-card bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700/50">
+                        <div class="text-4xl mb-3 text-tech-blue">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2" data-bind="skill.name">JavaScript</h4>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-tech-blue to-tech-green h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <span class="text-xs text-slate-400 mt-1 block" data-bind="skill.proficiency">95%</span>
+                    </div>
+                    
+                    <div class="tech-card bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700/50">
+                        <div class="text-4xl mb-3 text-tech-green">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2" data-bind="skill.name">React Native</h4>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-tech-blue to-tech-green h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                        <span class="text-xs text-slate-400 mt-1 block" data-bind="skill.proficiency">90%</span>
+                    </div>
+                    
+                    <div class="tech-card bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700/50">
+                        <div class="text-4xl mb-3 text-tech-blue">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2" data-bind="skill.name">Ionic</h4>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-tech-blue to-tech-green h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                        <span class="text-xs text-slate-400 mt-1 block" data-bind="skill.proficiency">88%</span>
+                    </div>
+                    
+                    <div class="tech-card bg-slate-800/50 p-6 rounded-xl text-center border border-slate-700/50">
+                        <div class="text-4xl mb-3 text-tech-green">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2" data-bind="skill.name">Node.js</h4>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-gradient-to-r from-tech-blue to-tech-green h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <span class="text-xs text-slate-400 mt-1 block" data-bind="skill.proficiency">85%</span>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+            
+            <!-- Additional Skills -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-semibold text-lg mb-4 text-tech-blue">Frontend</h4>
+                    <div class="space-y-2">
+                        <!-- @MAP: frontendSkills.map(skill => ( -->
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">React</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Vue.js</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">TypeScript</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Tailwind CSS</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">SCSS</span>
+                        <!-- @END_MAP )) -->
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4 text-tech-green">Mobile</h4>
+                    <div class="space-y-2">
+                        <!-- @MAP: mobileSkills.map(skill => ( -->
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">iOS Development</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Android Development</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Flutter</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Cordova</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">PWA</span>
+                        <!-- @END_MAP )) -->
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4 text-tech-blue">Backend & Tools</h4>
+                    <div class="space-y-2">
+                        <!-- @MAP: backendSkills.map(skill => ( -->
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Express.js</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">MongoDB</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Firebase</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Git</span>
+                        <span class="skill-badge inline-block bg-slate-800/70 text-slate-300 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-slate-600" data-bind="skill.name" data-mock="true">Docker</span>
+                        <!-- @END_MAP )) -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills Section -->
+
+    <!-- @COMPONENT: Projects Section -->
+    <section id="projects" class="py-20 bg-dark-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Featured <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    A showcase of mobile apps and web applications that demonstrate my expertise
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: projects.map(project => ( -->
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <!-- Mobile app development on smartphone and tablet -->
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="Mobile app development interface" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold" data-bind="project.title" data-mock="true">E-Commerce Mobile App</h3>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-tech-blue/20 text-tech-blue px-2 py-1 rounded" data-bind="project.category" data-mock="true">Mobile</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-slate-400 text-sm mb-4" data-bind="project.description" data-mock="true">
+                            Full-featured e-commerce mobile app built with React Native. Features include real-time inventory, 
+                            secure payments, and seamless user experience across iOS and Android.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">React Native</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Redux</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Node.js</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-tech-blue hover:text-blue-400 transition-colors" data-implementation="Link to live demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-white transition-colors" data-implementation="Link to GitHub repo">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <!-- Hybrid app development showing code and mobile devices -->
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="Hybrid app development workspace" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold" data-bind="project.title" data-mock="true">Task Management PWA</h3>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-tech-green/20 text-tech-green px-2 py-1 rounded" data-bind="project.category" data-mock="true">Web App</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-slate-400 text-sm mb-4" data-bind="project.description" data-mock="true">
+                            Progressive Web App for team collaboration and task management. Built with Ionic and featuring 
+                            offline capabilities, push notifications, and real-time sync.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Ionic</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Angular</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Firebase</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-tech-blue hover:text-blue-400 transition-colors" data-implementation="Link to live demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-white transition-colors" data-implementation="Link to GitHub repo">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <!-- JavaScript coding on multiple screens -->
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="JavaScript development environment" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold" data-bind="project.title" data-mock="true">Real-time Chat Platform</h3>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-tech-blue/20 text-tech-blue px-2 py-1 rounded" data-bind="project.category" data-mock="true">Full Stack</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-slate-400 text-sm mb-4" data-bind="project.description" data-mock="true">
+                            Enterprise-grade real-time messaging platform with video calls, file sharing, and team channels. 
+                            Built with React and Node.js, supporting thousands of concurrent users.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">React</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Socket.io</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">MongoDB</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-tech-blue hover:text-blue-400 transition-colors" data-implementation="Link to live demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-white transition-colors" data-implementation="Link to GitHub repo">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <!-- Mobile app development showing responsive design -->
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="Mobile UI/UX design process" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold" data-bind="project.title" data-mock="true">Fitness Tracking App</h3>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-tech-green/20 text-tech-green px-2 py-1 rounded" data-bind="project.category" data-mock="true">Mobile</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-slate-400 text-sm mb-4" data-bind="project.description" data-mock="true">
+                            Cross-platform fitness app with workout tracking, nutrition logging, and social features. 
+                            Integrates with wearables and provides AI-powered insights.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Flutter</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">TensorFlow</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Firebase</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-tech-blue hover:text-blue-400 transition-colors" data-implementation="Link to app store">
+                                <i class="fas fa-mobile-alt"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-white transition-colors" data-implementation="Link to GitHub repo">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <!-- Hybrid development environment with code and devices -->
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="Cross-platform development setup" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold" data-bind="project.title" data-mock="true">IoT Dashboard</h3>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-tech-blue/20 text-tech-blue px-2 py-1 rounded" data-bind="project.category" data-mock="true">IoT</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-slate-400 text-sm mb-4" data-bind="project.description" data-mock="true">
+                            Comprehensive IoT monitoring dashboard for smart home devices. Features real-time data 
+                            visualization, device control, and automated scheduling.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Vue.js</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">MQTT</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">WebSocket</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-tech-blue hover:text-blue-400 transition-colors" data-implementation="Link to live demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-white transition-colors" data-implementation="Link to GitHub repo">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-slate-800/50 rounded-xl overflow-hidden border border-slate-700/50">
+                    <!-- JavaScript coding with complex algorithms -->
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="Advanced JavaScript development" 
+                         class="w-full h-48 object-cover" 
+                         data-mock-image="true" />
+                    
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold" data-bind="project.title" data-mock="true">Financial Analytics Platform</h3>
+                            <div class="flex space-x-2">
+                                <span class="text-xs bg-tech-green/20 text-tech-green px-2 py-1 rounded" data-bind="project.category" data-mock="true">Web App</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-slate-400 text-sm mb-4" data-bind="project.description" data-mock="true">
+                            Advanced financial analytics platform with real-time market data, portfolio tracking, 
+                            and predictive modeling. Built for institutional investors.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">React</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">D3.js</span>
+                            <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-bind="tech.name" data-mock="true">Python</span>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-tech-blue hover:text-blue-400 transition-colors" data-implementation="Link to live demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-white transition-colors" data-implementation="Link to case study">
+                                <i class="fas fa-file-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gradient-to-r from-tech-blue to-tech-green text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300" data-event="click:viewAllProjects">
+                    View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Section -->
+
+    <!-- @COMPONENT: Experience Timeline -->
+    <section id="experience" class="py-20 bg-light-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Professional <span class="gradient-text">Journey</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    A decade of growth, innovation, and impactful contributions to the tech industry
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-tech-blue to-tech-green"></div>
+                
+                <div class="space-y-12">
+                    <!-- @MAP: experiences.map((experience, index) => ( -->
+                    <div class="relative flex items-center justify-between">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+                                <div class="flex items-center justify-end space-x-2 mb-2">
+                                    <span class="text-sm text-slate-400" data-bind="experience.period" data-mock="true">2020 - Present</span>
+                                    <div class="w-3 h-3 bg-tech-blue rounded-full"></div>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2" data-bind="experience.position" data-mock="true">Senior Mobile Developer</h3>
+                                <h4 class="text-tech-green font-medium mb-3" data-bind="experience.company" data-mock="true">TechCorp Solutions</h4>
+                                <p class="text-slate-400 text-sm" data-bind="experience.description" data-mock="true">
+                                    Lead mobile development team in creating cross-platform applications for Fortune 500 clients. 
+                                    Architected scalable solutions serving millions of users worldwide.
+                                </p>
+                                <div class="flex flex-wrap justify-end gap-2 mt-3">
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">React Native</span>
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">Team Leadership</span>
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">Architecture</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline marker -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-tech-blue rounded-full border-4 border-light-navy"></div>
+                        
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+                    
+                    <div class="relative flex items-center justify-between">
+                        <div class="flex-1 pr-8"></div>
+                        
+                        <!-- Timeline marker -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-tech-green rounded-full border-4 border-light-navy"></div>
+                        
+                        <div class="flex-1 pl-8">
+                            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <div class="w-3 h-3 bg-tech-green rounded-full"></div>
+                                    <span class="text-sm text-slate-400" data-bind="experience.period" data-mock="true">2017 - 2020</span>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2" data-bind="experience.position" data-mock="true">Full Stack Developer</h3>
+                                <h4 class="text-tech-blue font-medium mb-3" data-bind="experience.company" data-mock="true">Innovation Labs</h4>
+                                <p class="text-slate-400 text-sm" data-bind="experience.description" data-mock="true">
+                                    Developed end-to-end web and mobile solutions for startups and established businesses. 
+                                    Specialized in rapid prototyping and MVP development.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mt-3">
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">JavaScript</span>
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">Node.js</span>
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative flex items-center justify-between">
+                        <div class="flex-1 pr-8 text-right">
+                            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50">
+                                <div class="flex items-center justify-end space-x-2 mb-2">
+                                    <span class="text-sm text-slate-400" data-bind="experience.period" data-mock="true">2014 - 2017</span>
+                                    <div class="w-3 h-3 bg-tech-blue rounded-full"></div>
+                                </div>
+                                <h3 class="text-xl font-semibold mb-2" data-bind="experience.position" data-mock="true">Mobile App Developer</h3>
+                                <h4 class="text-tech-green font-medium mb-3" data-bind="experience.company" data-mock="true">Mobile First Agency</h4>
+                                <p class="text-slate-400 text-sm" data-bind="experience.description" data-mock="true">
+                                    Focused on mobile app development using hybrid technologies. Built apps for various industries 
+                                    including healthcare, education, and e-commerce.
+                                </p>
+                                <div class="flex flex-wrap justify-end gap-2 mt-3">
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">Ionic</span>
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">Cordova</span>
+                                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded" data-mock="true">Angular</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline marker -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-tech-green rounded-full border-4 border-light-navy"></div>
+                        
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Experience Timeline -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-dark-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Let's <span class="gradient-text">Connect</span>
+                </h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                    Ready to bring your next project to life? Let's discuss how we can work together
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-tech-blue">Get In Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-tech-blue/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-tech-blue"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-sm">Email</p>
+                                    <p class="text-white font-medium" data-bind="contact.email" data-mock="true">kshitij@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-tech-green/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-tech-green"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-sm">Phone</p>
+                                    <p class="text-white font-medium" data-bind="contact.phone" data-mock="true">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-tech-blue/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-tech-blue"></i>
+                                </div>
+                                <div>
+                                    <p class="text-slate-400 text-sm">Location</p>
+                                    <p class="text-white font-medium" data-bind="contact.location" data-mock="true">San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-tech-green">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-slate-800/50 rounded-lg flex items-center justify-center text-slate-400 hover:text-tech-blue hover:bg-tech-blue/10 transition-all duration-300" data-implementation="Link to GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-slate-800/50 rounded-lg flex items-center justify-center text-slate-400 hover:text-tech-blue hover:bg-tech-blue/10 transition-all duration-300" data-implementation="Link to LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-slate-800/50 rounded-lg flex items-center justify-center text-slate-400 hover:text-tech-blue hover:bg-tech-blue/10 transition-all duration-300" data-implementation="Link to Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-slate-800/50 rounded-lg flex items-center justify-center text-slate-400 hover:text-tech-green hover:bg-tech-green/10 transition-all duration-300" data-implementation="Link to personal blog">
+                                <i class="fas fa-blog"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-slate-800/50 rounded-xl p-8 border border-slate-700/50">
+                    <form class="space-y-6" data-implementation="Should handle form submission with validation">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">First Name</label>
+                                <input type="text" 
+                                       class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent" 
+                                       placeholder="John" 
+                                       data-bind="form.firstName" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Last Name</label>
+                                <input type="text" 
+                                       class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent" 
+                                       placeholder="Doe" 
+                                       data-bind="form.lastName" />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                            <input type="email" 
+                                   class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent" 
+                                   placeholder="john@example.com" 
+                                   data-bind="form.email" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Project Type</label>
+                            <select class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent" data-bind="form.projectType">
+                                <option value="" data-mock="true">Select project type</option>
+                                <option value="mobile-app" data-mock="true">Mobile App Development</option>
+                                <option value="web-app" data-mock="true">Web Application</option>
+                                <option value="consultation" data-mock="true">Technical Consultation</option>
+                                <option value="other" data-mock="true">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                            <textarea rows="4" 
+                                      class="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-tech-blue focus:border-transparent resize-none" 
+                                      placeholder="Tell me about your project..." 
+                                      data-bind="form.message"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-tech-blue to-tech-green text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2" 
+                                data-event="click:submitContactForm">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-light-navy py-12 border-t border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-br from-tech-blue to-tech-green rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">KT</span>
+                    </div>
+                    <span class="font-semibold text-lg" data-bind="developer.name">Kshitij Tiwari</span>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <p class="text-slate-400 text-sm" data-mock="true">
+                        © 2024 Kshitij Tiwari. Crafted with passion for mobile-first experiences.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-tech-blue transition-colors" data-implementation="Link to privacy policy">Privacy</a>
+                    <a href="#" class="text-slate-400 hover:text-tech-blue transition-colors" data-implementation="Link to terms">Terms</a>
+                    <a href="#contact" class="text-slate-400 hover:text-tech-blue transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Floating scroll to top button -->
+    <button id="scrollTop" class="fixed bottom-8 right-8 w-12 h-12 bg-tech-blue text-white rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 opacity-0 pointer-events-none" data-event="click:scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        (function() {
+            // TODO: Implement business logic, API calls, or state management
+            
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Scroll to top button functionality
+            const scrollTopBtn = document.getElementById('scrollTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.style.opacity = '1';
+                    scrollTopBtn.style.pointerEvents = 'auto';
+                } else {
+                    scrollTopBtn.style.opacity = '0';
+                    scrollTopBtn.style.pointerEvents = 'none';
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animation
+            const animatedElements = document.querySelectorAll('.tech-card, .project-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+            
+            // Mobile menu toggle (placeholder functionality)
+            const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    // TODO: Implement mobile menu toggle
+                    console.log('Mobile menu toggle clicked');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,883 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Johnson - Full Stack Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#64748B',
+                        accent: '#0EA5E9',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-gray-800">
+
+<!-- @COMPONENT: Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <div class="text-xl font-bold text-primary">
+                <span data-bind="user.name">Alex Johnson</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary transition-colors duration-200">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-primary transition-colors duration-200">About</a>
+                <a href="#projects" class="text-gray-700 hover:text-primary transition-colors duration-200">Projects</a>
+                <a href="#skills" class="text-gray-700 hover:text-primary transition-colors duration-200">Skills</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition-colors duration-200">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2" data-event="click:toggleMobileMenu" data-implementation="Toggle mobile menu visibility">
+                <i class="fas fa-bars text-gray-700"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <!-- @STATE: mobileMenuOpen:boolean = false -->
+    <div class="md:hidden bg-white border-t border-gray-200" data-bind="mobileMenuOpen" style="display: none;">
+        <div class="px-4 py-2 space-y-1">
+            <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-primary">Home</a>
+            <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary">About</a>
+            <a href="#projects" class="block px-3 py-2 text-gray-700 hover:text-primary">Projects</a>
+            <a href="#skills" class="block px-3 py-2 text-gray-700 hover:text-primary">Skills</a>
+            <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary">Contact</a>
+        </div>
+    </div>
+</nav>
+<!-- @END_COMPONENT: Navigation -->
+
+<!-- @COMPONENT: Hero Section -->
+<section id="home" class="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="animate-slide-up">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Hi, I'm <span class="text-primary" data-bind="user.firstName">Alex</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-4">
+                    <span data-bind="user.title">Full Stack Developer</span>
+                </p>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                    <span data-bind="user.description" data-mock="true">I create beautiful, responsive web applications using modern technologies. Passionate about clean code and exceptional user experiences.</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center" data-event="click:scrollToProjects">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="border-2 border-primary text-primary px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-all duration-200 flex items-center justify-center" data-event="click:downloadResume" data-implementation="Download CV/Resume file">
+                        <i class="fas fa-download mr-2"></i>
+                        <span>Download CV</span>
+                    </button>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex space-x-4 mt-8">
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-200" data-bind="user.social.github" data-implementation="Link to GitHub profile">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-200" data-bind="user.social.linkedin" data-implementation="Link to LinkedIn profile">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-200" data-bind="user.social.twitter" data-implementation="Link to Twitter profile">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors duration-200" data-bind="user.social.email" data-implementation="mailto link">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative animate-fade-in">
+                <!-- Professional workspace setting with modern computer setup -->
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                     alt="Professional headshot" 
+                     class="rounded-2xl shadow-2xl w-full max-w-lg mx-auto animate-float" 
+                     data-mock-image="true" 
+                     data-implementation="Replace with actual professional headshot" />
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: Hero Section -->
+
+<!-- @COMPONENT: About Section -->
+<section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                <span data-bind="user.aboutSubtitle" data-mock="true">Passionate developer with a love for creating innovative solutions</span>
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <!-- Modern office setup with dual monitors and creative workspace -->
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                     alt="Modern workspace setup" 
+                     class="rounded-xl shadow-lg w-full h-auto"
+                     data-mock-image="true" 
+                     data-implementation="Replace with actual workspace photo" />
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">My Journey</h3>
+                <p class="text-gray-600 mb-6" data-mock="true">
+                    With over 5 years of experience in web development, I've had the privilege of working with startups and established companies to bring their digital visions to life. My journey began with a Computer Science degree, and I've been constantly learning and adapting to new technologies ever since.
+                </p>
+                <p class="text-gray-600 mb-8" data-mock="true">
+                    I specialize in React, Node.js, and cloud technologies, with a passion for creating scalable, user-friendly applications. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2" data-bind="user.stats.projects" data-mock="true">50+</div>
+                        <div class="text-gray-600">Projects Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2" data-bind="user.stats.experience" data-mock="true">5+</div>
+                        <div class="text-gray-600">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2" data-bind="user.stats.clients" data-mock="true">30+</div>
+                        <div class="text-gray-600">Happy Clients</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-primary mb-2" data-bind="user.stats.awards" data-mock="true">10+</div>
+                        <div class="text-gray-600">Awards Won</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: About Section -->
+
+<!-- @COMPONENT: Projects Section -->
+<section id="projects" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                A showcase of my recent work and personal projects
+            </p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="px-6 py-2 bg-primary text-white rounded-full hover:bg-blue-700 transition-colors duration-200" data-event="click:filterProjects" data-filter="all">
+                All Projects
+            </button>
+            <button class="px-6 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors duration-200" data-event="click:filterProjects" data-filter="web">
+                Web Apps
+            </button>
+            <button class="px-6 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors duration-200" data-event="click:filterProjects" data-filter="mobile">
+                Mobile Apps
+            </button>
+            <button class="px-6 py-2 bg-white text-gray-700 rounded-full hover:bg-gray-100 transition-colors duration-200" data-event="click:filterProjects" data-filter="design">
+                UI/UX Design
+            </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <!-- @MAP: projects.map(project => ( -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                <!-- Modern e-commerce interface on a computer screen -->
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="E-commerce platform project" 
+                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                     data-mock-image="true" />
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-gray-900" data-bind="project.title" data-mock="true">E-Commerce Platform</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.liveUrl" data-implementation="Link to live project">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.githubUrl" data-implementation="Link to GitHub repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-bind="project.description" data-mock="true">
+                        A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and inventory management.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full" data-mock="true">React</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full" data-mock="true">Node.js</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full" data-mock="true">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                <!-- Mobile app interface design on smartphone -->
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="Task management mobile app" 
+                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                     data-mock-image="true" />
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-gray-900" data-bind="project.title" data-mock="true">Task Management App</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.liveUrl">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.githubUrl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-bind="project.description" data-mock="true">
+                        A cross-platform mobile app for task and project management. Built with React Native and Firebase, featuring real-time collaboration and offline sync.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full" data-mock="true">React Native</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full" data-mock="true">Firebase</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-800 text-sm rounded-full" data-mock="true">Redux</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                <!-- Data visualization dashboard on computer screen -->
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="Analytics dashboard project" 
+                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                     data-mock-image="true" />
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-gray-900" data-bind="project.title" data-mock="true">Analytics Dashboard</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.liveUrl">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.githubUrl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-bind="project.description" data-mock="true">
+                        A comprehensive analytics dashboard for tracking business metrics. Features interactive charts, real-time data updates, and customizable reporting.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full" data-mock="true">React</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full" data-mock="true">D3.js</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full" data-mock="true">Express</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                <!-- Social media platform interface -->
+                <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="Social media platform" 
+                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                     data-mock-image="true" />
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-gray-900" data-bind="project.title" data-mock="true">Social Media Platform</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.liveUrl">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.githubUrl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-bind="project.description" data-mock="true">
+                        A modern social media platform with real-time messaging, content sharing, and community features. Built with Next.js and Socket.io for optimal performance.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full" data-mock="true">Next.js</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full" data-mock="true">Socket.io</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full" data-mock="true">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                <!-- AI/ML application interface -->
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="AI-powered chat application" 
+                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                     data-mock-image="true" />
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-gray-900" data-bind="project.title" data-mock="true">AI Chat Assistant</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.liveUrl">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.githubUrl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-bind="project.description" data-mock="true">
+                        An intelligent chat assistant powered by machine learning. Features natural language processing, context awareness, and integration with various APIs.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full" data-mock="true">Python</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full" data-mock="true">TensorFlow</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full" data-mock="true">FastAPI</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                <!-- Creative portfolio or design showcase -->
+                <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                     alt="Creative portfolio website" 
+                     class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                     data-mock-image="true" />
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-gray-900" data-bind="project.title" data-mock="true">Creative Portfolio</h3>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.liveUrl">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-primary transition-colors" data-bind="project.githubUrl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-bind="project.description" data-mock="true">
+                        A stunning portfolio website for a creative agency. Features smooth animations, interactive galleries, and a content management system for easy updates.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full" data-mock="true">Vue.js</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-sm rounded-full" data-mock="true">GSAP</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full" data-mock="true">Strapi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_MAP )) -->
+
+        <div class="text-center mt-12">
+            <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200" data-event="click:viewAllProjects" data-implementation="Navigate to full projects page">
+                View All Projects
+            </button>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: Projects Section -->
+
+<!-- @COMPONENT: Skills Section -->
+<section id="skills" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                A comprehensive overview of my technical expertise and core competencies
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Frontend Development -->
+            <div class="text-center">
+                <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-code text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Frontend Development</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">React</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">Vue.js</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">TypeScript</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Development -->
+            <div class="text-center">
+                <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-server text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Backend Development</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">Node.js</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">Python</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">Express.js</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database & Cloud -->
+            <div class="text-center">
+                <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-database text-purple-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Database & Cloud</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">MongoDB</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">PostgreSQL</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">AWS</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Design -->
+            <div class="text-center">
+                <div class="bg-orange-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-tools text-orange-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Tools & Design</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">Git</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">Figma</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600" data-mock="true">Docker</span>
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technology Icons Grid -->
+        <div class="mt-16 pt-16 border-t border-gray-200">
+            <h3 class="text-2xl font-bold text-center text-gray-900 mb-12">Technologies I Work With</h3>
+            <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-8 items-center justify-items-center">
+                <div class="text-center">
+                    <i class="fab fa-react text-4xl text-blue-500 mb-2"></i>
+                    <p class="text-sm text-gray-600" data-mock="true">React</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-vue text-4xl text-green-500 mb-2"></i>
+                    <p class="text-sm text-gray-600" data-mock="true">Vue.js</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-node-js text-4xl text-green-600 mb-2"></i>
+                    <p class="text-sm text-gray-600" data-mock="true">Node.js</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-python text-4xl text-blue-600 mb-2"></i>
+                    <p class="text-sm text-gray-600" data-mock="true">Python</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-docker text-4xl text-blue-500 mb-2"></i>
+                    <p class="text-sm text-gray-600" data-mock="true">Docker</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-aws text-4xl text-orange-500 mb-2"></i>
+                    <p class="text-sm text-gray-600" data-mock="true">AWS</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-git-alt text-4xl text-red-500 mb-2"></i>
+                    <p class="text-sm text-gray-600" data-mock="true">Git</p>
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-figma text-4xl text-purple-500 mb-2"></i>
+                    <p class="text-sm text-gray-600" data-mock="true">Figma</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: Skills Section -->
+
+<!-- @COMPONENT: Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Ready to start your next project? Let's work together to bring your ideas to life.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Information -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-8">Let's Talk</h3>
+                
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">Email</h4>
+                            <p class="text-gray-600" data-bind="user.email" data-mock="true">alex.johnson@email.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-phone text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">Phone</h4>
+                            <p class="text-gray-600" data-bind="user.phone" data-mock="true">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <div class="bg-primary rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">Location</h4>
+                            <p class="text-gray-600" data-bind="user.location" data-mock="true">San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mt-8">
+                    <h4 class="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200" data-bind="user.social.linkedin">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200" data-bind="user.social.github">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="#" class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200" data-bind="user.social.twitter">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center hover:bg-primary hover:text-white transition-colors duration-200" data-bind="user.social.dribbble">
+                            <i class="fab fa-dribbble text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <form data-event="submit:handleContactSubmit" data-implementation="Handle form submission with validation">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input type="text" id="firstName" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors duration-200" required data-mock="true">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors duration-200" required data-mock="true">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors duration-200" required data-mock="true">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors duration-200" required data-mock="true">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-colors duration-200 resize-none" required data-mock="true"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: Contact Section -->
+
+<!-- @COMPONENT: Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="md:col-span-2">
+                <h3 class="text-2xl font-bold mb-4" data-bind="user.name" data-mock="true">Alex Johnson</h3>
+                <p class="text-gray-400 mb-6 max-w-md" data-mock="true">
+                    Full Stack Developer passionate about creating exceptional digital experiences. Always learning, always growing.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" data-bind="user.social.github">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" data-bind="user.social.linkedin">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" data-bind="user.social.twitter">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" data-bind="user.social.email">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-200">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
+                    <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-200">Projects</a></li>
+                    <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-200">Skills</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Services</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-400" data-mock="true">Web Development</span></li>
+                    <li><span class="text-gray-400" data-mock="true">Mobile Apps</span></li>
+                    <li><span class="text-gray-400" data-mock="true">UI/UX Design</span></li>
+                    <li><span class="text-gray-400" data-mock="true">Consulting</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p class="text-gray-400" data-mock="true">
+                © 2024 Alex Johnson. All rights reserved. Built with ❤️ and lots of coffee.
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- @END_COMPONENT: Footer -->
+
+<script>
+(function() {
+    // Mobile menu toggle functionality
+    // TODO: Implement mobile menu toggle state management
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Active navigation highlighting on scroll
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-primary');
+            link.classList.add('text-gray-700');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.remove('text-gray-700');
+                link.classList.add('text-primary');
+            }
+        });
+    });
+
+    // Project filter functionality
+    // TODO: Implement project filtering logic
+
+    // Form submission handling
+    // TODO: Implement form validation and submission
+
+    // Download CV functionality
+    // TODO: Implement CV download feature
+
+    // Loading animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.animate-slide-up, .animate-fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(el);
+    });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,664 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshitij Tiwari - Lead Consultant & Mobile App Developer</title>
+    <meta name="description" content="Experienced IT Professional with 10+ years expertise in React Native, Redux, and Ionic. Lead Consultant at Xebia IT Architects.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1e40af',
+                        'secondary': '#0d9488',
+                        'accent': '#f59e0b',
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-primary">Kshitij Tiwari</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition-colors">Experience</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" data-event="click:toggleMobileMenu">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="pt-20 pb-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-8">
+                    <!-- Professional headshot placeholder -->
+                    <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-4xl font-bold">
+                        KT
+                    </div>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Kshitij <span class="text-primary">Tiwari</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-4">
+                    Lead Consultant & Mobile App Developer
+                </p>
+                <p class="text-lg text-gray-500 mb-8 max-w-3xl mx-auto">
+                    Experienced IT Professional with 10+ years of expertise in React Native, Redux, and Ionic. 
+                    Building innovative mobile solutions for enterprise and fintech clients.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                    <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                        Get In Touch
+                    </a>
+                    <a href="#" class="border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/5 transition-colors" data-implementation="Should trigger resume download">
+                        <i class="fas fa-download mr-2"></i>Download Resume
+                    </a>
+                </div>
+                <div class="flex justify-center space-x-6 text-gray-500">
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>Kanpur, India</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-award mr-2 text-accent"></i>
+                        <span>Sirius Award Winner 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Software development team working on mobile applications -->
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Software development team collaboration" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Passionate Mobile App Developer & Team Leader</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        With over 10 years of experience in the IT industry, I specialize in designing, developing, and deploying 
+                        cutting-edge mobile applications using React Native, Redux, and Ionic. Currently serving as a Lead Consultant 
+                        at Xebia IT Architects, I lead cross-functional teams in delivering innovative solutions for enterprise clients.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        My expertise spans across the full development lifecycle, from initial concept to deployment and maintenance. 
+                        I've had the privilege of working on high-profile projects including YES BANK's mobile banking application 
+                        and various government initiatives, consistently delivering solutions that exceed client expectations.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-primary">10+</div>
+                            <div class="text-sm text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-secondary">50+</div>
+                            <div class="text-sm text-gray-600">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Expertise in modern technologies and frameworks for building scalable mobile and web applications
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Mobile Development -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fab fa-react text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-3">Mobile Development</h3>
+                    <div class="space-y-2">
+                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">React Native</span>
+                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Redux</span>
+                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Ionic</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fab fa-js text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-3">Frontend</h3>
+                    <div class="space-y-2">
+                        <span class="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">HTML5</span>
+                        <span class="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">CSS3</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fab fa-php text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-3">Backend</h3>
+                    <div class="space-y-2">
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">PHP</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">MySQL</span>
+                        <span class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">CodeIgniter</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-gray-600/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-tools text-gray-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-3">Tools & Platforms</h3>
+                    <div class="space-y-2">
+                        <span class="inline-block bg-gray-600/10 text-gray-600 px-3 py-1 rounded-full text-sm">VS Code</span>
+                        <span class="inline-block bg-gray-600/10 text-gray-600 px-3 py-1 rounded-full text-sm">Git</span>
+                        <span class="inline-block bg-gray-600/10 text-gray-600 px-3 py-1 rounded-full text-sm">WordPress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills Section -->
+
+    <!-- @COMPONENT: Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 hidden md:block"></div>
+                
+                <div class="space-y-12">
+                    <!-- Current Position -->
+                    <div class="relative md:ml-16">
+                        <div class="absolute -left-8 w-4 h-4 bg-primary rounded-full border-4 border-white shadow hidden md:block"></div>
+                        <div class="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 rounded-xl border border-primary/10">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Lead Consultant</h3>
+                                    <p class="text-primary font-semibold">Xebia IT Architects India Pvt Ltd</p>
+                                </div>
+                                <div class="text-sm text-gray-500 mt-2 md:mt-0">
+                                    <i class="fas fa-calendar mr-2"></i>Oct 2020 - Present
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Leading mobile application development projects using React Native, Redux, and Ionic. 
+                                Collaborating with cross-functional teams in Agile environments for planning, estimation, 
+                                and execution. Responsible for program design, coding, testing, development, and documentation.
+                            </p>
+                            <div class="mt-4 flex items-center text-accent">
+                                <i class="fas fa-award mr-2"></i>
+                                <span class="text-sm font-semibold">Sirius Award for Best Techie 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Previous Positions -->
+                    <!-- @MAP: experienceItems.map(item => ( -->
+                    <div class="relative md:ml-16">
+                        <div class="absolute -left-8 w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow hidden md:block"></div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Hybrid Mobile App Developer</h3>
+                                    <p class="text-secondary font-semibold">Ecifm Solutions Pvt. Ltd.</p>
+                                </div>
+                                <div class="text-sm text-gray-500 mt-2 md:mt-0">
+                                    <i class="fas fa-calendar mr-2"></i>Jun 2019 - Aug 2020
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Worked on YES BANK's mobile banking application using React Native, Redux, and JavaScript. 
+                                Developed critical features including fingerprint authentication, fund transfer capabilities, 
+                                and bill payment functionality.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative md:ml-16">
+                        <div class="absolute -left-8 w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow hidden md:block"></div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Software Developer</h3>
+                                    <p class="text-secondary font-semibold">Infogain India Pvt. Ltd.</p>
+                                </div>
+                                <div class="text-sm text-gray-500 mt-2 md:mt-0">
+                                    <i class="fas fa-calendar mr-2"></i>Dec 2018 - Mar 2019
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Developed software applications using PHP, MySQL, CodeIgniter, and WordPress. 
+                                Implemented data crawling solutions for various client projects.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative md:ml-16">
+                        <div class="absolute -left-8 w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow hidden md:block"></div>
+                        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Software Developer</h3>
+                                    <p class="text-secondary font-semibold">Triazine Software Pvt. Ltd.</p>
+                                </div>
+                                <div class="text-sm text-gray-500 mt-2 md:mt-0">
+                                    <i class="fas fa-calendar mr-2"></i>Jun 2016 - Nov 2018
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Developed web applications using PHP, MySQL, CodeIgniter, and WordPress. 
+                                Specialized in data crawling and web scraping solutions.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Experience Section -->
+
+    <!-- @COMPONENT: Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Showcasing key projects that demonstrate expertise in mobile banking, enterprise solutions, and government applications
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- YES BANK Project -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+                    <!-- Mobile banking application interface showing secure login -->
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Mobile banking application interface" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-900">Iris by YES BANK</h3>
+                            <span class="ml-auto bg-primary/10 text-primary px-2 py-1 rounded text-xs font-semibold">Banking</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Led development of YES BANK's mobile banking application with fingerprint login, 
+                            fund transfer, UPI integration, and bill payment functionality.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">React Native</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Redux</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Biometric Auth</span>
+                        </div>
+                        <div class="flex items-center text-primary">
+                            <i class="fas fa-star mr-1"></i>
+                            <span class="text-sm font-semibold">Featured Project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IBM TRIRIGA Project -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+                    <!-- Enterprise mobile application for facility management -->
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Enterprise facility management application" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-900">Services On The Go!</h3>
+                            <span class="ml-auto bg-secondary/10 text-secondary px-2 py-1 rounded text-xs font-semibold">Enterprise</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Mobile application for IBM TRIRIGA® helping workers create work orders, 
+                            report time, manage inventory, and perform field inspections.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">React Native</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">IBM TRIRIGA</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Field Operations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IGL Project -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+                    <!-- Gas distribution monitoring application interface -->
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Gas distribution monitoring system" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-900">Indraprastha Gas (IGL)</h3>
+                            <span class="ml-auto bg-accent/10 text-accent px-2 py-1 rounded text-xs font-semibold">Utilities</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Application for India's leading natural gas distribution company enabling 
+                            agents to track domestic and commercial connections with offline capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Offline Support</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Data Sync</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Field App</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Government Projects -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="bg-gradient-to-r from-primary/10 to-secondary/10 h-48 flex items-center justify-center">
+                        <i class="fas fa-landmark text-4xl text-primary"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-900">Raj Mines Application</h3>
+                            <span class="ml-auto bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold">Government</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Platform for Rajasthan government to track coal mines and monitor 
+                            coal production, transportation, and distribution processes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Government</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Mining</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vasundhara Raje Project -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="bg-gradient-to-r from-secondary/10 to-accent/10 h-48 flex items-center justify-center">
+                        <i class="fas fa-users text-4xl text-secondary"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-900">Vasundhara Raje App</h3>
+                            <span class="ml-auto bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">Gov Tech</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Bilingual platform for Rajasthan government enabling direct communication 
+                            with citizens and efficient problem resolution.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Bilingual</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Citizen Services</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Communication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce Project -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+                    <!-- Online food ordering application interface -->
+                    <img src="https://pixabay.com/get/g20584f3137ca2aa1f17475a3d6adb1f39d28f8a2b38389fa40dd08ceda9dd4e5dc4d88fe66331fa89dc9a9306ea2b4f5a40ac7910a6112fba8f01b1dd4d2f89e_1280.jpg" alt="Food ordering application interface" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <h3 class="text-xl font-bold text-gray-900">Domino's Platform</h3>
+                            <span class="ml-auto bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-semibold">E-commerce</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Developed pizza ordering platform with extensive customization options 
+                            for crust types, toppings, and delivery preferences.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">E-commerce</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Customization</span>
+                            <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">Food Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Section -->
+
+    <!-- @COMPONENT: Achievement Section -->
+    <section class="py-16 bg-gradient-to-r from-accent/10 to-primary/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-sm mb-6">
+                    <i class="fas fa-trophy text-accent text-2xl mr-3"></i>
+                    <span class="text-xl font-bold text-gray-900">Recognition</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Sirius Award for Best Techie 2023
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Honored by XEBIA IT Architects for outstanding technical contributions, 
+                    leadership excellence, and innovative solutions in mobile application development.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Achievement Section -->
+
+    <!-- @COMPONENT: Education Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Education</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-gradient-to-r from-primary/5 to-secondary/5 p-8 rounded-xl border border-primary/10">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-primary text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Bachelor of Technology in Information Technology</h3>
+                            <p class="text-primary font-semibold mb-2">Kanpur Institute of Technology, Kanpur, India</p>
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-600">
+                                <div class="flex items-center mb-2 sm:mb-0">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>2008 - 2012</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-percentage mr-2"></i>
+                                    <span>65% (First Class)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Education Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Ready to discuss your next mobile application project? Let's connect and explore how we can work together.
+                </p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Email</p>
+                                    <a href="mailto:tiwarikshitij@gmail.com" class="text-gray-900 font-semibold hover:text-primary transition-colors">tiwarikshitij@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-secondary"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Phone</p>
+                                    <a href="tel:+917652030421" class="text-gray-900 font-semibold hover:text-secondary transition-colors">+91 7652030421</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-accent"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">Location</p>
+                                    <p class="text-gray-900 font-semibold">Kanpur, Uttar Pradesh, India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-linkedin text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-500 text-sm">LinkedIn</p>
+                                    <a href="https://linkedin.com/in/kshitij-tiwari/" target="_blank" class="text-gray-900 font-semibold hover:text-blue-600 transition-colors">linkedin.com/in/kshitij-tiwari/</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+                        <form class="space-y-6" data-implementation="Should handle form submission and validation">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your full name" data-mock="true">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="your.email@example.com" data-mock="true">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Project discussion" data-mock="true">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell me about your project..." data-mock="true"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary/90 transition-colors" data-event="click:handleSubmit">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Kshitij Tiwari</h3>
+                <p class="text-gray-400 mb-6">Lead Consultant & Mobile App Developer</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="mailto:tiwarikshitij@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/kshitij-tiwari/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="tel:+917652030421" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Kshitij Tiwari. All rights reserved. | Built with modern web technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Smooth scrolling for navigation links
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    // TODO: Implement mobile menu toggle functionality
+                    console.log('Mobile menu toggle clicked');
+                });
+            }
+
+            // Form submission handler
+            const contactForm = document.querySelector('[data-implementation*="form submission"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement form validation and submission logic
+                    console.log('Contact form submitted');
+                });
+            }
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('nav');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/95');
+                    navbar.classList.remove('bg-white/90');
+                } else {
+                    navbar.classList.add('bg-white/90');
+                    navbar.classList.remove('bg-white/95');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
