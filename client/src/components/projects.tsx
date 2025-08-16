@@ -7,7 +7,7 @@ export default function Projects() {
       category: "Banking",
       description: "Led development of YES BANK's mobile banking application with fingerprint login, fund transfer, UPI integration, and bill payment functionality.",
       technologies: ["React Native", "Redux", "Biometric Auth"],
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       categoryColor: "bg-primary-custom/10 text-primary-custom",
       featured: true
     },
@@ -16,7 +16,7 @@ export default function Projects() {
       category: "Enterprise",
       description: "Mobile application for IBM TRIRIGA® helping workers create work orders, report time, manage inventory, and perform field inspections.",
       technologies: ["React Native", "IBM TRIRIGA", "Field Operations"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       categoryColor: "bg-secondary-custom/10 text-secondary-custom",
       featured: false
     },
@@ -25,7 +25,7 @@ export default function Projects() {
       category: "Utilities",
       description: "Application for India's leading natural gas distribution company enabling agents to track domestic and commercial connections with offline capabilities.",
       technologies: ["Offline Support", "Data Sync", "Field App"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       categoryColor: "bg-accent-custom/10 text-accent-custom",
       featured: false
     },
@@ -52,7 +52,7 @@ export default function Projects() {
       category: "E-commerce",
       description: "Developed pizza ordering platform with extensive customization options for crust types, toppings, and delivery preferences.",
       technologies: ["E-commerce", "Customization", "Food Tech"],
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
       categoryColor: "bg-red-100 text-red-700",
       featured: false
     }

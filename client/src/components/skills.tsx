@@ -26,7 +26,7 @@ export default function Skills() {
     {
       title: "Tools & Platforms",
       icon: <FaTools className="text-gray-600 text-2xl" />,
-      skills: ["VS Code", "Git", "WordPress"],
+      skills: ["VS Code", "Git", "Jira", "WordPress"],
       bgColor: "bg-gray-600/10",
       textColor: "text-gray-600",
     },

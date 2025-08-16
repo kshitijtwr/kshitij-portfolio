@@ -8,10 +8,10 @@ export default function About() {
         </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            {/* Software development team working on mobile applications */}
+            {/* Mobile app development and coding */}
             <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt="Software development team collaboration" 
+              src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+              alt="Mobile app development and coding workspace" 
               className="rounded-xl shadow-lg w-full h-auto"
             />
           </div>
@@ -22,10 +22,14 @@ export default function About() {
               cutting-edge mobile applications using React Native, Redux, and Ionic. Currently serving as a Lead Consultant 
               at Xebia IT Architects, I lead cross-functional teams in delivering innovative solutions for enterprise clients.
             </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
+            <p className="text-gray-600 mb-6 leading-relaxed">
               My expertise spans across the full development lifecycle, from initial concept to deployment and maintenance. 
               I've had the privilege of working on high-profile projects including YES BANK's mobile banking application 
               and various government initiatives, consistently delivering solutions that exceed client expectations.
+            </p>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              I have developed custom native bridges for Android and iOS platforms, specifically for SIM binding and 
+              SIM ejection detection functionality, enabling seamless hardware integration in mobile applications.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-4 bg-gray-50 rounded-lg">
