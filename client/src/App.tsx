@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch, HashRouter } from 'wouter';
+import { Route, Switch, Router } from 'wouter';
+import { useHashLocation } from 'wouter';
 import { queryClient } from './lib/queryClient';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
@@ -12,13 +13,12 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        {/* Wrap your routes in HashRouter */}
-        <HashRouter>
+        <Router hook={useHashLocation}>
           <Switch>
             <Route path="/" component={Home} />
             <Route path="*" component={NotFound} />
           </Switch>
-        </HashRouter>
+        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   );
