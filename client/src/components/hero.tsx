@@ -11,7 +11,7 @@ export default function Hero() {
   const downloadResume = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // This would need to be added to public folder
+    link.href = './resume.pdf'; // This would need to be added to public folder
     link.download = 'Kshitij_Tiwari_Resume.pdf';
     document.body.appendChild(link);
     link.click();
