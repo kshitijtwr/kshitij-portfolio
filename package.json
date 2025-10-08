@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deployCmd": "rm -rf dist && npm run build"
+    "deployCmd": "rm -rf dist && npm run build",
+    "devRun": "npm run dev",
+    "prodRun": "npm run deployCmd && npm run preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

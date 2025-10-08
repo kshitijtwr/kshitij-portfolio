@@ -5,7 +5,7 @@ export default function Skills() {
     {
       title: "Mobile Development",
       icon: <FaReact className="text-primary-custom text-2xl" />,
-      skills: ["React Native", "Redux", "Ionic"],
+      skills: ["React Native", "Redux", "Ionic", "Angular"],
       bgColor: "bg-primary-custom/10",
       textColor: "text-primary-custom",
     },

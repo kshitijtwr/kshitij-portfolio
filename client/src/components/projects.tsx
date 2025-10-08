@@ -1,4 +1,6 @@
 import { Star, Building, Landmark, Users, ShoppingCart } from "lucide-react";
+import blueTypeImg from "@/images/CMYK_Blue_Type_Vert.png";
+import rajasthenApp from "@/images/Rajastan-Govt-PSU.jpeg";
 
 export default function Projects() {
   const projects = [
@@ -34,7 +36,8 @@ export default function Projects() {
       category: "Government",
       description: "Platform for Rajasthan government to track coal mines and monitor coal production, transportation, and distribution processes.",
       technologies: ["Government", "Mining", "Tracking"],
-      icon: <Landmark className="text-4xl text-primary-custom" />,
+      // icon: <Landmark className="text-4xl text-primary-custom" />,
+      image:rajasthenApp,
       categoryColor: "bg-green-100 text-green-700",
       featured: false
     },
@@ -43,7 +46,8 @@ export default function Projects() {
       category: "Gov Tech",
       description: "Bilingual platform for Rajasthan government enabling direct communication with citizens and efficient problem resolution.",
       technologies: ["Bilingual", "Citizen Services", "Communication"],
-      icon: <Users className="text-4xl text-secondary-custom" />,
+      // icon: <Users className="text-4xl text-secondary-custom" />,
+      image:rajasthenApp,
       categoryColor: "bg-purple-100 text-purple-700",
       featured: false
     },
@@ -51,8 +55,8 @@ export default function Projects() {
       title: "Domino's Platform",
       category: "E-commerce",
       description: "Developed pizza ordering platform with extensive customization options for crust types, toppings, and delivery preferences.",
-      technologies: ["E-commerce", "Customization", "Food Tech"],
-      image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+      technologies: ["Angular", "Javascript", "Food Tech", "IBM MobileFirst"],
+      image: blueTypeImg,
       categoryColor: "bg-red-100 text-red-700",
       featured: false
     }
@@ -71,45 +75,45 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
-              {project.image ? (
-                <img 
-                  src={project.image} 
-                  alt={`${project.title} interface`}
-                  className="w-full h-48 object-cover"
-                />
-              ) : (
-                <div className="bg-gradient-to-r from-primary-custom/10 to-secondary-custom/10 h-48 flex items-center justify-center">
-                  {project.icon}
-                </div>
-              )}
-              <div className="p-6">
-                <div className="flex items-center mb-3">
-                  <h3 className="text-xl font-bold text-gray-900 flex-1">{project.title}</h3>
-                  <span className={`ml-auto px-2 py-1 rounded text-xs font-semibold ${project.categoryColor}`}>
-                    {project.category}
-                  </span>
-                </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                {project.featured && (
-                  <div className="flex items-center text-primary-custom">
-                    <Star className="h-4 w-4 mr-1" />
-                    <span className="text-sm font-semibold">Featured Project</span>
-                  </div>
-                )}
-              </div>
-            </div>
+  {project.image ? (
+    <img 
+      src={project.image} 
+      alt={`${project.title} interface`}
+      className="w-full h-48 object-cover rounded-t-xl" // Add rounded-t-xl here for top corners
+    />
+  ) : (
+    <div className="bg-gradient-to-r from-primary-custom/10 to-secondary-custom/10 h-48 flex items-center justify-center rounded-t-xl">
+      {project?.icon}
+    </div>
+  )}
+  <div className="p-6">
+    <div className="flex items-center mb-3">
+      <h3 className="text-xl font-bold text-gray-900 flex-1">{project.title}</h3>
+      <span className={`ml-auto px-2 py-1 rounded text-xs font-semibold ${project.categoryColor}`}>
+        {project.category}
+      </span>
+    </div>
+    <p className="text-gray-600 mb-4 leading-relaxed">
+      {project.description}
+    </p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {project.technologies.map((tech, techIndex) => (
+        <span
+          key={techIndex}
+          className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+    {project.featured && (
+      <div className="flex items-center text-primary-custom">
+        <Star className="h-4 w-4 mr-1" />
+        <span className="text-sm font-semibold">Featured Project</span>
+      </div>
+    )}
+  </div>
+</div>
           ))}
         </div>
       </div>

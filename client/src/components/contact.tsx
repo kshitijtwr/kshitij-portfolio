@@ -37,15 +37,26 @@ export default function Contact() {
                     <Phone className="text-secondary-custom" />
                   </div>
                   <div>
-                    <p className="text-gray-500 text-sm">Phone</p>
-                    <a 
-                      href="tel:+917652030421" 
-                      className="text-gray-900 font-semibold hover:text-secondary-custom transition-colors"
-                    >
-                      +91 7652030421
-                    </a>
+                    <p className="text-gray-500 text-sm mb-1">Phone</p>
+                    <div className="flex flex-col space-y-1">
+                      <a 
+                        href="tel:+917652030421" 
+                        className="text-gray-900 font-semibold hover:text-secondary-custom transition-colors"
+                        aria-label="Primary Phone Number"
+                      >
+                        +91 7652030421
+                      </a>
+                      <a 
+                        href="tel:+919415477930" 
+                        className="text-gray-900 font-semibold hover:text-secondary-custom transition-colors"
+                        aria-label="Secondary Phone Number"
+                      >
+                        +91 9415477930
+                      </a>
+                    </div>
                   </div>
                 </div>
+
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-accent-custom/10 rounded-lg flex items-center justify-center mr-4">
                     <MapPin className="text-accent-custom" />
@@ -125,6 +136,8 @@ export default function Contact() {
           <div className="grid md:grid-cols-3 gap-6">
             <a 
               href="mailto:tiwarikshitij@gmail.com"
+              target="_blank" 
+              rel="noopener noreferrer"
               className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
             >
               <div className="text-center">
