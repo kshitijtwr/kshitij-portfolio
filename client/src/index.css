@@ -89,6 +89,10 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    background:
+      radial-gradient(circle at top left, hsl(214.3 100% 38.4% / 0.10), transparent 34rem),
+      radial-gradient(circle at 85% 8%, hsl(172.8 77.8% 36.3% / 0.12), transparent 30rem),
+      linear-gradient(180deg, hsl(210 40% 99%), hsl(210 40% 96%));
   }
 
   html {
@@ -97,6 +101,109 @@
 }
 
 @layer utilities {
+  .section-surface {
+    background:
+      linear-gradient(135deg, hsl(0 0% 100% / 0.92), hsl(210 40% 98% / 0.88)),
+      radial-gradient(circle at top right, hsl(172.8 77.8% 36.3% / 0.08), transparent 22rem);
+  }
+
+  .section-muted {
+    background:
+      linear-gradient(135deg, hsl(214 32% 91% / 0.46), hsl(0 0% 100% / 0.72)),
+      radial-gradient(circle at 12% 22%, hsl(42.9 100% 48.2% / 0.10), transparent 20rem);
+  }
+
+  .glass-panel {
+    background: hsl(0 0% 100% / 0.76);
+    border: 1px solid hsl(214 32% 91% / 0.8);
+    box-shadow: 0 24px 60px hsl(222 84% 5% / 0.08);
+    backdrop-filter: blur(18px);
+  }
+
+  .card-lift {
+    transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px hsl(222 84% 5% / 0.12);
+    border-color: hsl(214.3 100% 38.4% / 0.22);
+  }
+
+  .btn-primary-glow {
+    background: linear-gradient(135deg, hsl(214.3 100% 38.4%), hsl(172.8 77.8% 36.3%));
+    box-shadow: 0 16px 32px hsl(214.3 100% 38.4% / 0.28);
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  }
+
+  .btn-primary-glow:hover {
+    transform: translateY(-2px);
+    filter: saturate(1.08);
+    box-shadow: 0 20px 42px hsl(214.3 100% 38.4% / 0.34);
+  }
+
+  .btn-outline-glow {
+    background: hsl(0 0% 100% / 0.74);
+    transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .btn-outline-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px hsl(214.3 100% 38.4% / 0.12);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(214.3 100% 38.4%), hsl(172.8 77.8% 36.3%), hsl(42.9 100% 48.2%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .section-rule {
+    width: 6rem;
+    height: 0.25rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, hsl(214.3 100% 38.4%), hsl(172.8 77.8% 36.3%), hsl(42.9 100% 48.2%));
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(hsl(214 32% 91% / 0.58) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(214 32% 91% / 0.58) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+  }
+
+  .animate-rise {
+    animation: rise-in 680ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .animate-rise-delay-1 {
+    animation: rise-in 720ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both;
+  }
+
+  .animate-rise-delay-2 {
+    animation: rise-in 760ms cubic-bezier(0.2, 0.8, 0.2, 1) 220ms both;
+  }
+
+  .animate-float {
+    animation: float-soft 4.5s ease-in-out infinite;
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 2.6s ease-out infinite;
+  }
+
+  .animate-shimmer {
+    background-size: 220% 100%;
+    animation: shimmer 4s linear infinite;
+  }
+
+  .stagger-item {
+    animation: rise-in 650ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: calc(var(--stagger, 0) * 85ms);
+  }
+
   .text-primary-custom {
     color: hsl(214.3 100% 38.4%);
   }
@@ -139,5 +246,58 @@
   
   .hover\:text-primary-custom:hover {
     color: hsl(214.3 100% 38.4%);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    opacity: 0.36;
+    transform: scale(0.92);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.22);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 220% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
   }
 }

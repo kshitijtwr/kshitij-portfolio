@@ -1,4 +1,5 @@
-import { Star, Building, Landmark, Users, ShoppingCart } from "lucide-react";
+import type { CSSProperties } from "react";
+import { Star } from "lucide-react";
 import blueTypeImg from "@/images/CMYK_Blue_Type_Vert.png";
 import rajasthenApp from "@/images/Rajastan-Govt-PSU.jpeg";
 
@@ -63,33 +64,27 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 section-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-          <div className="w-24 h-1 bg-primary-custom mx-auto mb-6"></div>
+          <div className="section-rule mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Showcasing key projects that demonstrate expertise in mobile banking, enterprise solutions, and government applications
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
-  {project.image ? (
+            <div key={index} className="group stagger-item card-lift overflow-hidden rounded-lg border border-gray-100 bg-white/86 shadow-sm backdrop-blur" style={{ "--stagger": index } as CSSProperties & Record<"--stagger", number>}>
     <img 
       src={project.image} 
       alt={`${project.title} interface`}
-      className="w-full h-48 object-cover rounded-t-xl" // Add rounded-t-xl here for top corners
+      className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
     />
-  ) : (
-    <div className="bg-gradient-to-r from-primary-custom/10 to-secondary-custom/10 h-48 flex items-center justify-center rounded-t-xl">
-      {project?.icon}
-    </div>
-  )}
   <div className="p-6">
     <div className="flex items-center mb-3">
       <h3 className="text-xl font-bold text-gray-900 flex-1">{project.title}</h3>
-      <span className={`ml-auto px-2 py-1 rounded text-xs font-semibold ${project.categoryColor}`}>
+      <span className={`ml-auto rounded px-2 py-1 text-xs font-semibold ${project.categoryColor}`}>
         {project.category}
       </span>
     </div>
@@ -100,7 +95,7 @@ export default function Projects() {
       {project.technologies.map((tech, techIndex) => (
         <span
           key={techIndex}
-          className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
+          className="rounded bg-gray-100 px-2 py-1 text-xs text-gray-700 transition-colors group-hover:bg-primary-custom/10 group-hover:text-primary-custom"
         >
           {tech}
         </span>

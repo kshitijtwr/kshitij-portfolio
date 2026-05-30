@@ -1,21 +1,21 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 section-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-          <div className="w-24 h-1 bg-primary-custom mx-auto"></div>
+          <div className="section-rule mx-auto"></div>
         </div>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="animate-rise">
             {/* Mobile app development and coding */}
             <img 
               src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
               alt="Mobile app development and coding workspace" 
-              className="rounded-xl shadow-lg w-full h-auto"
+              className="w-full rounded-lg shadow-2xl shadow-primary-custom/10 transition-transform duration-500 hover:scale-[1.02]"
             />
           </div>
-          <div>
+          <div className="animate-rise-delay-1">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Passionate Mobile App Developer & Team Leader</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
               With over 10 years of experience in the IT industry, I specialize in designing, developing, and deploying 
@@ -32,11 +32,11 @@ export default function About() {
               SIM ejection detection functionality, enabling seamless hardware integration in mobile applications.
             </p>
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <div className="card-lift text-center p-5 glass-panel rounded-lg">
                 <div className="text-2xl font-bold text-primary-custom">10+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
-              <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <div className="card-lift text-center p-5 glass-panel rounded-lg">
                 <div className="text-2xl font-bold text-secondary-custom">50+</div>
                 <div className="text-sm text-gray-600">Projects Completed</div>
               </div>

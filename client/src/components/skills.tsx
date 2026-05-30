@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { FaReact, FaJs, FaPhp, FaTools } from "react-icons/fa";
 
 export default function Skills() {
@@ -33,11 +34,11 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 section-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
-          <div className="w-24 h-1 bg-primary-custom mx-auto mb-6"></div>
+          <div className="section-rule mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Expertise in modern technologies and frameworks for building scalable mobile and web applications
           </p>
@@ -46,9 +47,10 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              className="group stagger-item card-lift glass-panel rounded-lg p-6"
+              style={{ "--stagger": index } as CSSProperties & Record<"--stagger", number>}
             >
-              <div className={`w-12 h-12 ${category.bgColor} rounded-lg flex items-center justify-center mb-4`}>
+              <div className={`w-12 h-12 ${category.bgColor} rounded-lg flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110`}>
                 {category.icon}
               </div>
               <h3 className="font-semibold text-gray-900 mb-3">{category.title}</h3>

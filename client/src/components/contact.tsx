@@ -3,11 +3,11 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 section-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <div className="w-24 h-1 bg-primary-custom mx-auto mb-6"></div>
+          <div className="section-rule mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Ready to discuss your next mobile application project? Let's connect and explore how we can work together.
           </p>
@@ -15,11 +15,11 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div>
+            <div className="animate-rise">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
               <div className="space-y-6">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-primary-custom/10 rounded-lg flex items-center justify-center mr-4">
+                <div className="group flex items-center rounded-lg p-2 transition-colors hover:bg-white/70">
+                  <div className="w-12 h-12 bg-primary-custom/10 rounded-lg flex items-center justify-center mr-4 transition-transform group-hover:scale-110">
                     <Mail className="text-primary-custom" />
                   </div>
                   <div>
@@ -32,8 +32,8 @@ export default function Contact() {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-secondary-custom/10 rounded-lg flex items-center justify-center mr-4">
+                <div className="group flex items-center rounded-lg p-2 transition-colors hover:bg-white/70">
+                  <div className="w-12 h-12 bg-secondary-custom/10 rounded-lg flex items-center justify-center mr-4 transition-transform group-hover:scale-110">
                     <Phone className="text-secondary-custom" />
                   </div>
                   <div>
@@ -57,8 +57,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-accent-custom/10 rounded-lg flex items-center justify-center mr-4">
+                <div className="group flex items-center rounded-lg p-2 transition-colors hover:bg-white/70">
+                  <div className="w-12 h-12 bg-accent-custom/10 rounded-lg flex items-center justify-center mr-4 transition-transform group-hover:scale-110">
                     <MapPin className="text-accent-custom" />
                   </div>
                   <div>
@@ -66,8 +66,8 @@ export default function Contact() {
                     <p className="text-gray-900 font-semibold">Kanpur, Uttar Pradesh, India</p>
                   </div>
                 </div>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mr-4">
+                <div className="group flex items-center rounded-lg p-2 transition-colors hover:bg-white/70">
+                  <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mr-4 transition-transform group-hover:scale-110">
                     <FaLinkedin className="text-blue-600" />
                   </div>
                   <div>
@@ -86,9 +86,9 @@ export default function Contact() {
             </div>
 
             {/* Let's Connect */}
-            <div>
+            <div className="animate-rise-delay-1">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Connect</h3>
-              <div className="bg-gradient-to-r from-primary-custom/5 to-secondary-custom/5 p-8 rounded-xl border border-primary-custom/10">
+              <div className="glass-panel rounded-lg p-8">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-primary-custom/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <MessageCircle className="text-primary-custom text-2xl" />
@@ -101,13 +101,13 @@ export default function Contact() {
                   <div className="space-y-4">
                     <a 
                       href="mailto:tiwarikshitij@gmail.com?subject=Project Discussion"
-                      className="block w-full bg-primary-custom text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-custom/90 transition-colors"
+                      className="btn-primary-glow block w-full rounded-lg px-6 py-3 font-semibold text-white"
                     >
                       Send Email
                     </a>
                     <a 
                       href="tel:+917652030421"
-                      className="block w-full border border-primary-custom text-primary-custom px-6 py-3 rounded-lg font-semibold hover:bg-primary-custom/5 transition-colors"
+                      className="btn-outline-glow block w-full rounded-lg border border-primary-custom/30 px-6 py-3 font-semibold text-primary-custom"
                     >
                       Call Now
                     </a>
@@ -115,7 +115,7 @@ export default function Contact() {
                       href="https://linkedin.com/in/kshitij-tiwari/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full border border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                      className="btn-outline-glow block w-full rounded-lg border border-blue-600/30 px-6 py-3 font-semibold text-blue-600"
                     >
                       Connect on LinkedIn
                     </a>
@@ -138,7 +138,7 @@ export default function Contact() {
               href="mailto:tiwarikshitij@gmail.com"
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
+              className="card-lift glass-panel rounded-lg p-6 group"
             >
               <div className="text-center">
                 <div className="w-12 h-12 bg-primary-custom/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-custom/20 transition-colors">
@@ -150,7 +150,7 @@ export default function Contact() {
             </a>
             <a 
               href="tel:+917652030421"
-              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
+              className="card-lift glass-panel rounded-lg p-6 group"
             >
               <div className="text-center">
                 <div className="w-12 h-12 bg-secondary-custom/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary-custom/20 transition-colors">
@@ -164,7 +164,7 @@ export default function Contact() {
               href="https://linkedin.com/in/kshitij-tiwari/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
+              className="card-lift glass-panel rounded-lg p-6 group"
             >
               <div className="text-center">
                 <div className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600/20 transition-colors">

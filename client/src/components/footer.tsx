@@ -3,15 +3,15 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-950 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h3 className="text-2xl font-bold mb-4">Kshitij Tiwari</h3>
+          <h3 className="text-2xl font-bold mb-4 gradient-text">Kshitij Tiwari</h3>
           <p className="text-gray-400 mb-6">Lead Consultant & Mobile App Developer</p>
           <div className="flex justify-center space-x-6 mb-8">
             <a 
               href="mailto:tiwarikshitij@gmail.com" 
-              className="text-gray-400 hover:text-white transition-colors"
+              className="rounded-lg p-2 text-gray-400 transition-all hover:-translate-y-1 hover:bg-white/10 hover:text-white"
             >
               <Mail className="text-xl" />
             </a>
@@ -19,13 +19,13 @@ export default function Footer() {
               href="https://linkedin.com/in/kshitij-tiwari/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className="rounded-lg p-2 text-gray-400 transition-all hover:-translate-y-1 hover:bg-white/10 hover:text-white"
             >
               <FaLinkedin className="text-xl" />
             </a>
             <a 
               href="tel:+917652030421" 
-              className="text-gray-400 hover:text-white transition-colors"
+              className="rounded-lg p-2 text-gray-400 transition-all hover:-translate-y-1 hover:bg-white/10 hover:text-white"
             >
               <Phone className="text-xl" />
             </a>

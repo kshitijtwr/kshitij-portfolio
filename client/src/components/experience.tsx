@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Calendar, Award } from "lucide-react";
 
 export default function Experience() {
@@ -48,26 +49,26 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-white">
+    <section id="experience" className="py-20 section-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
-          <div className="w-24 h-1 bg-primary-custom mx-auto"></div>
+          <div className="section-rule mx-auto"></div>
         </div>
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 hidden md:block"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-custom via-secondary-custom to-accent-custom hidden md:block"></div>
           
           <div className="space-y-12">
             {experiences.map((experience, index) => (
-              <div key={index} className="relative md:ml-16">
-                <div className={`absolute -left-8 w-4 h-4 rounded-full border-4 border-white shadow hidden md:block ${
+              <div key={index} className="stagger-item relative md:ml-16" style={{ "--stagger": index } as CSSProperties & Record<"--stagger", number>}>
+                <div className={`absolute -left-8 w-4 h-4 rounded-full border-4 border-white shadow-lg hidden md:block ${
                   experience.isCurrentRole ? 'bg-primary-custom' : 'bg-gray-300'
                 }`}></div>
-                <div className={`p-6 rounded-xl border shadow-sm ${
+                <div className={`card-lift rounded-lg border p-6 ${
                   experience.isCurrentRole 
-                    ? 'bg-gradient-to-r from-primary-custom/5 to-secondary-custom/5 border-primary-custom/10'
-                    : 'bg-white border-gray-200'
+                    ? 'glass-panel border-primary-custom/20'
+                    : 'bg-white/82 border-gray-200 shadow-sm backdrop-blur'
                 }`}>
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
