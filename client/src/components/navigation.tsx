@@ -64,6 +64,12 @@ export default function Navigation() {
               Projects
             </button>
             <button
+              onClick={() => scrollToSection("achievements")}
+              className="relative text-gray-700 transition-colors after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-primary-custom after:transition-all hover:text-primary-custom hover:after:w-full"
+            >
+              Achievements
+            </button>
+            <button
               onClick={() => scrollToSection("skills")}
               className="relative text-gray-700 transition-colors after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-primary-custom after:transition-all hover:text-primary-custom hover:after:w-full"
             >
@@ -111,6 +117,12 @@ export default function Navigation() {
                 className="text-gray-700 hover:text-primary-custom transition-colors text-left"
               >
                 Projects
+              </button>
+              <button
+                onClick={() => scrollToSection("achievements")}
+                className="text-gray-700 hover:text-primary-custom transition-colors text-left"
+              >
+                Achievements
               </button>
               <button
                 onClick={() => scrollToSection("skills")}

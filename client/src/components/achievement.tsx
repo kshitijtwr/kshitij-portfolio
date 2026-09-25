@@ -1,22 +1,67 @@
-import { Trophy } from "lucide-react";
+import { Award, Trophy } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { achievements, type AchievementItem } from "@/data/achievements";
+
+function imageUrl(file: string) {
+  return `${import.meta.env.BASE_URL}achievements/${file}`;
+}
+
+function AchievementCard({ item }: { item: AchievementItem }) {
+  const Icon = item.type === "Certificate" ? Award : Trophy;
+  const meta = [item.issuer, item.year].filter(Boolean).join(" • ");
+
+  return (
+    <Card className="overflow-hidden flex flex-col">
+      <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center">
+        {item.image ? (
+          <a
+            href={imageUrl(item.image)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full"
+          >
+            <img
+              src={imageUrl(item.image)}
+              alt={item.label}
+              loading="lazy"
+              className="w-full h-full object-contain"
+            />
+          </a>
+        ) : (
+          <Icon className="w-16 h-16 text-accent-custom" />
+        )}
+      </div>
+      <div className="p-5 flex-1">
+        <span className="inline-flex items-center gap-1 text-xs font-semibold text-accent-custom mb-2">
+          <Icon className="w-3.5 h-3.5" />
+          {item.type}
+        </span>
+        <h3 className="text-lg font-bold text-gray-900">{item.label}</h3>
+        {meta && <p className="text-sm text-gray-500 mt-1">{meta}</p>}
+        {item.description && (
+          <p className="text-sm text-gray-600 mt-3">{item.description}</p>
+        )}
+      </div>
+    </Card>
+  );
+}
 
 export default function Achievement() {
   return (
-    <section className="relative overflow-hidden py-16">
-      <div className="absolute inset-0 animate-shimmer bg-gradient-to-r from-accent-custom/10 via-primary-custom/10 to-secondary-custom/10" />
+    <section id="achievements" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative text-center animate-rise">
-          <div className="inline-flex items-center bg-white/84 rounded-full px-6 py-3 shadow-sm mb-6 backdrop-blur">
-            <Trophy className="text-accent-custom text-2xl mr-3" />
-            <span className="text-xl font-bold text-gray-900">Recognition</span>
-          </div>
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Sirius Award for Best Techie 2023
+            Achievements &amp; Certificates
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Honored by XEBIA IT Architects for outstanding technical contributions, 
-            leadership excellence, and innovative solutions in mobile application development.
+            Recognition and credentials earned along the way.
           </p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {achievements.map((item) => (
+            <AchievementCard key={item.label} item={item} />
+          ))}
         </div>
       </div>
     </section>
